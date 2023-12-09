@@ -1,6 +1,8 @@
-package cards;
+package Uno.cards;
 
-public abstract class Card {
+import Uno.Descriptable;
+
+public abstract class Card implements Descriptable {
     private Color color;
 
     public Card(Color color) {

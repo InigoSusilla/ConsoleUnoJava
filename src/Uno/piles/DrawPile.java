@@ -1,13 +1,14 @@
-package piles;
+package Uno.piles;
 
-import cards.Card;
-import cards.Color;
-import cards.NumberCard;
+import Uno.Descriptable;
+import Uno.cards.Card;
+import Uno.cards.Color;
+import Uno.cards.NumberCard;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class DrawPile {
+public class DrawPile implements Descriptable {
     private final ArrayList<Card> cards;
 
     public DrawPile() {
@@ -28,7 +29,7 @@ public class DrawPile {
                     cards.add(nc);
                 }
             }
-            //All the number cards are now TODO the special cards
+            //All the number Uno.cards are now TODO the special Uno.cards
             Collections.shuffle(cards);
         }
 
@@ -57,4 +58,8 @@ public class DrawPile {
         return cards.size();
     }
 
+    @Override
+    public String getDescription() {
+        return "In this class is the functionality to make the draw pile work and fill it when its empty";
+    }
 }

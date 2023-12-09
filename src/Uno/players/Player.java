@@ -1,12 +1,13 @@
-package players;
+package Uno.players;
 
-import cards.Card;
-import piles.DiscardPile;
-import piles.DrawPile;
+import Uno.cards.Card;
+import Uno.piles.DiscardPile;
+import Uno.piles.DrawPile;
 
 import java.util.ArrayList;
+import Uno.Descriptable;
 
-public abstract class Player {
+public abstract class Player implements Descriptable{
     private String name;
     private ArrayList<Card> hand;
 

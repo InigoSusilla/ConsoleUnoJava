@@ -1,11 +1,12 @@
-package piles;
+package Uno.piles;
 
-import cards.Card;
+import Uno.Descriptable;
+import Uno.cards.Card;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class DiscardPile {
+public class DiscardPile implements Descriptable {
     private ArrayList<Card> discardedCards;
 
     public DiscardPile(Card card) {
@@ -50,5 +51,10 @@ public class DiscardPile {
             discardedCards.removeLast();
             return a;
         }
+    }
+
+    @Override
+    public String getDescription() {
+        return "In this class we have the functionality to make the discard pile work emptying when its necesary";
     }
 }

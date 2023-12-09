@@ -1,6 +1,8 @@
-import players.ComputerPlayer;
-import players.HumanPlayer;
-import players.Player;
+package Uno;
+
+import Uno.players.ComputerPlayer;
+import Uno.players.HumanPlayer;
+import Uno.players.Player;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -9,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
         UnoGame game = new UnoGame();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("How many players are we playing (2-9)");
+        System.out.println("How many Uno.players are we playing (2-9)");
         String text = scanner.nextLine();
         int number = Integer.parseInt(text);
         ArrayList<Player> players = new ArrayList<>();

@@ -1,7 +1,7 @@
-package players;
+package Uno.players;
 
-import cards.Card;
-import piles.DiscardPile;
+import Uno.cards.Card;
+import Uno.piles.DiscardPile;
 
 public class ComputerPlayer extends Player{
 
@@ -20,11 +20,16 @@ public class ComputerPlayer extends Player{
             }
         }
         if(playable==null){
-            throw new NoPlayableCardException("No playable cards avatible");
+            throw new NoPlayableCardException("No playable Uno.cards avatible");
         }else{
             pile.addCard(playable);
             this.removeCardFomHand(playable);
             return playable;
         }
+    }
+
+    @Override
+    public String getDescription() {
+        return "In this class we have the functionality to make the computer generated bots play y themself";
     }
 }

@@ -1,7 +1,7 @@
-package players;
+package Uno.players;
 
-import cards.Card;
-import piles.DiscardPile;
+import Uno.cards.Card;
+import Uno.piles.DiscardPile;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -44,5 +44,10 @@ public class HumanPlayer extends Player {
         } while (!isSelected);
 
         return ret;
+    }
+
+    @Override
+    public String getDescription() {
+        return "In this class we have the functionality to make the human player interact with the game and choose the card to play";
     }
 }

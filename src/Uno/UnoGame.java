@@ -1,14 +1,16 @@
-import cards.Card;
-import piles.DiscardPile;
-import piles.DrawPile;
-import players.HumanPlayer;
-import players.Player;
+package Uno;
+
+import Uno.cards.Card;
+import Uno.piles.DiscardPile;
+import Uno.piles.DrawPile;
+import Uno.players.HumanPlayer;
+import Uno.players.Player;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class UnoGame {
+public class UnoGame implements Descriptable{
     private ArrayList<Player> players;
     private DrawPile drawPile;
     private DiscardPile discardPile;
@@ -49,7 +51,7 @@ public class UnoGame {
 
     public void addPlayer(Player p){
         if(!(this.players.size()<11)){
-            System.out.println("Too much players");
+            System.out.println("Too much Uno.players");
             throw new RuntimeException();
         }else{
             if(this.players.contains(p)){
@@ -79,7 +81,7 @@ public class UnoGame {
         Scanner scanner = new Scanner(System.in);
         String text;
         if(!(this.players.size() >= 2 && this.players.size() <= 11)){
-            System.out.println("Incorrect number of players "+ this.players.size());
+            System.out.println("Incorrect number of Uno.players "+ this.players.size());
             throw new RuntimeException();
         }
         for(Player p : this.players){
@@ -103,7 +105,7 @@ public class UnoGame {
             if(!this.currentPlayer.hasPlayableHand(this.discardPile.getTopCard())){
                 //this.currentPlayer.playCard(discardPile);
                 if(this.drawPile.isEmpty()){
-                    System.out.println("Suffling the cards");
+                    System.out.println("Suffling the Uno.cards");
                     suffleDiscardPile();
                     this.currentPlayer.drawCardFrom(drawPile);
 
@@ -132,5 +134,10 @@ public class UnoGame {
         }while (!gameNotFinnished);
 
         System.out.println("the winner is: " +this.winner.getName());
+    }
+
+    @Override
+    public String getDescription() {
+        return "In this class we have the functionality to make the uno game work";
     }
 }
