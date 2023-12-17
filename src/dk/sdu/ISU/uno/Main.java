@@ -1,8 +1,8 @@
-package Uno;
+package dk.sdu.ISU.uno;
 
-import Uno.players.ComputerPlayer;
-import Uno.players.HumanPlayer;
-import Uno.players.Player;
+import dk.sdu.ISU.uno.players.ComputerPlayer;
+import dk.sdu.ISU.uno.players.HumanPlayer;
+import dk.sdu.ISU.uno.players.Player;
 
 import java.util.ArrayList;
 import java.util.Scanner;

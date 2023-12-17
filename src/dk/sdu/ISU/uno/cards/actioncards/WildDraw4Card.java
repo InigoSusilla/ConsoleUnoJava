@@ -1,8 +1,8 @@
-package Uno.cards.actioncards;
+package dk.sdu.ISU.uno.cards.actioncards;
 
-import Uno.UnoGame;
-import Uno.cards.Color;
-import Uno.players.Player;
+import dk.sdu.ISU.uno.UnoGame;
+import dk.sdu.ISU.uno.cards.Color;
+import dk.sdu.ISU.uno.players.Player;
 
 public class WildDraw4Card extends WildCard{
 

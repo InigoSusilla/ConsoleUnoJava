@@ -1,11 +1,10 @@
-package Uno;
+package dk.sdu.ISU.uno;
 
-import Uno.cards.Card;
-import Uno.cards.actioncards.ActionCard;
-import Uno.piles.DiscardPile;
-import Uno.piles.DrawPile;
-import Uno.players.HumanPlayer;
-import Uno.players.Player;
+import dk.sdu.ISU.uno.cards.Card;
+import dk.sdu.ISU.uno.cards.actioncards.ActionCard;
+import dk.sdu.ISU.uno.piles.DiscardPile;
+import dk.sdu.ISU.uno.piles.DrawPile;
+import dk.sdu.ISU.uno.players.Player;
 
 import java.util.ArrayList;
 import java.util.Collections;

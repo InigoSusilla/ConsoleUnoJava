@@ -1,12 +1,12 @@
-package Uno.players;
+package dk.sdu.ISU.uno.players;
 
-import Uno.cards.Card;
-import Uno.cards.Color;
-import Uno.piles.DiscardPile;
-import Uno.piles.DrawPile;
+import dk.sdu.ISU.uno.cards.Card;
+import dk.sdu.ISU.uno.cards.Color;
+import dk.sdu.ISU.uno.piles.DiscardPile;
+import dk.sdu.ISU.uno.piles.DrawPile;
 
 import java.util.ArrayList;
-import Uno.Descriptable;
+import dk.sdu.ISU.uno.Descriptable;
 
 public abstract class Player implements Descriptable{
     private String name;

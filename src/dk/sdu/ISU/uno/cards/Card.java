@@ -1,6 +1,7 @@
-package Uno.cards;
+package dk.sdu.ISU.uno.cards;
 
-import Uno.Descriptable;
+
+import dk.sdu.ISU.uno.Descriptable;
 
 public abstract class Card implements Descriptable {
     private Color color;
@@ -21,5 +22,5 @@ public abstract class Card implements Descriptable {
    public abstract boolean matches(Card card);
 
 
-
+    public abstract String getDescription();
 }

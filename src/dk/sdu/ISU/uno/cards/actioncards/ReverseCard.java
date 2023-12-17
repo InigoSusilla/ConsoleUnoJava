@@ -1,8 +1,8 @@
-package Uno.cards.actioncards;
+package dk.sdu.ISU.uno.cards.actioncards;
 
-import Uno.UnoGame;
-import Uno.cards.Card;
-import Uno.cards.Color;
+import dk.sdu.ISU.uno.UnoGame;
+import dk.sdu.ISU.uno.cards.Card;
+import dk.sdu.ISU.uno.cards.Color;
 
 public class ReverseCard extends ActionCard {
     public ReverseCard(Color color) {

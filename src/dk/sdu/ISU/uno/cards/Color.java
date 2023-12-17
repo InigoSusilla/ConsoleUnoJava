@@ -1,4 +1,4 @@
-package Uno.cards;
+package dk.sdu.ISU.uno.cards;
 
 public enum Color {
     WILD,
