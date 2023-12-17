@@ -1,6 +1,7 @@
 package Uno.players;
 
 import Uno.cards.Card;
+import Uno.cards.Color;
 import Uno.piles.DiscardPile;
 
 import java.util.ArrayList;
@@ -13,13 +14,40 @@ public class HumanPlayer extends Player {
         super(name);
     }
 
+    @Override
+    public Color announceColor() {
+        Color cSelected = null;
+        Scanner scanner = new Scanner(System.in);
+        boolean selected = false;
+        System.out.println("Choose a color to change");
+       do {
+          for(Color c : Color.values()){
+              System.out.println(c);
+
+            }
+         String text = scanner.nextLine().toUpperCase();
+
+          if(!text.isEmpty()){
+              for(Color c : Color.values()){
+                  if(c.toString().equals(text.toUpperCase())){
+                      cSelected = c;
+                      selected = true;
+                      break;
+                  }
+              }
+          }
+       }while (!selected);
+
+        return cSelected ;
+    }
+
 
     @Override
     public Card playCard(DiscardPile pile) {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Card> playableCards = new ArrayList<>();
         for (Card c : this.getHand()) {
-            if (c.mathes(pile.getTopCard())) {
+            if (c.matches(pile.getTopCard())) {
                 playableCards.add(c);
             }
         }

@@ -1,6 +1,7 @@
 package Uno.players;
 
 import Uno.cards.Card;
+import Uno.cards.Color;
 import Uno.piles.DiscardPile;
 import Uno.piles.DrawPile;
 
@@ -25,18 +26,19 @@ public abstract class Player implements Descriptable{
     public void drawCardFrom(DrawPile pile){
         Card taken = pile.draw();
         this.hand.add(taken);
-        System.out.println("Drawing....");
     }
     public boolean hasPlayableHand(Card topCard){
         boolean ret = false;
         for(Card c : this.hand){
-            if(c.mathes(topCard)){
+            if(c.matches(topCard)){
                 ret = true;
                 break;
             }
         }
         return ret;
     }
+
+    public abstract Color announceColor();
     public void receiveCard(Card c){
         this.hand.add(c);
     }

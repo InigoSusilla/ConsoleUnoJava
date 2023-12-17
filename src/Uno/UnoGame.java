@@ -1,6 +1,7 @@
 package Uno;
 
 import Uno.cards.Card;
+import Uno.cards.actioncards.ActionCard;
 import Uno.piles.DiscardPile;
 import Uno.piles.DrawPile;
 import Uno.players.HumanPlayer;
@@ -120,6 +121,9 @@ public class UnoGame implements Descriptable{
                 passTurn();
             }else{
                Card playeyCard = this.currentPlayer.playCard(discardPile);
+               if(playeyCard instanceof ActionCard){
+                   ((ActionCard) playeyCard).action(this);
+               }
                System.out.println("Playing:                           "+playeyCard);
                if(this.currentPlayer.getHand().isEmpty()){
                    gameNotFinnished = true;
@@ -139,5 +143,10 @@ public class UnoGame implements Descriptable{
     @Override
     public String getDescription() {
         return "In this class we have the functionality to make the uno game work";
+    }
+
+    public void skipTurn(){
+        Player p = this.getSubsequentPlayer();
+        this.currentPlayer = p;
     }
 }

@@ -15,7 +15,7 @@ public class NumberCard extends Card {
     }
 
     @Override
-    public boolean mathes(Card other) {
+    public boolean matches(Card other) {
         if (other instanceof NumberCard) {
             if (this.getColor() == other.getColor() || this.number == ((NumberCard) other).getNumber()) {
                 return true;

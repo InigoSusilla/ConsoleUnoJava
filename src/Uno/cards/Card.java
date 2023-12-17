@@ -18,12 +18,8 @@ public abstract class Card implements Descriptable {
         this.color = Color.valueOf(color);
     }
 
-   public boolean mathes(Card card){
-        if(this.getColor() == card.getColor()){
-            return true;
-        }else{
-            return false;
-        }
-   }
+   public abstract boolean matches(Card card);
+
+
 
 }

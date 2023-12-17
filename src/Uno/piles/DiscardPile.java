@@ -19,12 +19,12 @@ public class DiscardPile implements Descriptable {
     }
 
     public Card getTopCard(){
-        return this.discardedCards.get(0);
+        return this.discardedCards.getFirst();
     }
 
     public boolean addCard(Card card) {
-        if (card.mathes(this.discardedCards.get(0))) {
-            this.discardedCards.add(0, card);
+        if (card.matches(this.discardedCards.getFirst())) {
+            this.discardedCards.addFirst(card);
             return true;
         }else{
             return false;

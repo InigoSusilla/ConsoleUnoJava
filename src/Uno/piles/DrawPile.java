@@ -4,6 +4,7 @@ import Uno.Descriptable;
 import Uno.cards.Card;
 import Uno.cards.Color;
 import Uno.cards.NumberCard;
+import Uno.cards.actioncards.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,25 +14,37 @@ public class DrawPile implements Descriptable {
 
     public DrawPile() {
         this.cards = new ArrayList<>();
+        for (int j = 0; j < 2; j++) {
         for (Color color : Color.values()) {
             if (color == Color.WILD) {
+                Card cd = new WildCard();
+                cards.add(cd);
             } else {
+                for (int l = 0; l < 2; l++) {
+                    Draw2 dr = new Draw2(color);
+                    cards.add(dr);
+                    ReverseCard rc = new ReverseCard(color);
+                    cards.add(rc);
+                    SkipCard sc = new SkipCard(color);
+                    cards.add(sc);
+                }
                 for (int i = 1; i <= 9; i++) {
                     NumberCard nc = new NumberCard(color, i);
                     cards.add(nc);
                 }
             }
-        } for (Color color : Color.values()) {
-            if (color == Color.WILD) {
-            } else {
-                for (int i = 1; i <= 9; i++) {
-                    NumberCard nc = new NumberCard(color, i);
-                    cards.add(nc);
-                }
-            }
-            //All the number Uno.cards are now TODO the special Uno.cards
-            Collections.shuffle(cards);
         }
+        }
+
+        for (int i = 0; i < 4; i++) {
+            WildDraw4Card wdc = new WildDraw4Card();
+            cards.add(wdc);
+
+        }
+        Collections.shuffle(cards);
+        do {
+            Collections.shuffle(cards);
+        }while(cards.getFirst().getColor().equals("WILD"));
 
 
     }

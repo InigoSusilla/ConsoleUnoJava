@@ -1,7 +1,10 @@
 package Uno.players;
 
 import Uno.cards.Card;
+import Uno.cards.Color;
 import Uno.piles.DiscardPile;
+
+import java.util.Random;
 
 public class ComputerPlayer extends Player{
 
@@ -10,11 +13,18 @@ public class ComputerPlayer extends Player{
     }
 
     @Override
+    public Color announceColor() {
+        Color[] colors = Color.values();
+        Random rdm = new Random();
+        return colors[rdm.nextInt(colors.length)];
+    }
+
+    @Override
     public Card playCard(DiscardPile pile) {
         Card playable = null;
 
         for(Card c : this.getHand()){
-            if(c.mathes(pile.getTopCard())){
+            if(c.matches(pile.getTopCard())){
                 playable = c;
                 break;
             }
